@@ -33,7 +33,7 @@ body {
 
 .flowers {
   position: relative;
-  transform: scale(0.9) translateX(1-vw); 
+  transform: scale(0.9) translateX(10vw); 
 }
 
 .flower {
