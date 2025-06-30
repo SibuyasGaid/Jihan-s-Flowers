@@ -33,7 +33,7 @@ body {
 
 .flowers {
   position: relative;
-  transform: scale(0.9) translateX(25vw); 
+  transform: scale(0.9) translateX(10vw); 
 }
 
 .flower {
@@ -1285,6 +1285,8 @@ body {
   width: 35vw;
   max-width: 400px;
   min-height: 60vh;
+  max-height: 80vh; /* Add this */
+  overflow-y: auto; /* Add this for scrolling if content exceeds max-height */
   background: linear-gradient(145deg, #fff5f9 0%, #ffeef7 50%, #f8e8f5 100%);
   border-radius: 15px;
   box-shadow: 
