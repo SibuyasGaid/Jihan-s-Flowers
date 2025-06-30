@@ -33,7 +33,7 @@ body {
 
 .flowers {
   position: relative;
-  transform: scale(0.9);
+  transform: scale(0.9) translateX(25vw); 
 }
 
 .flower {
@@ -1273,5 +1273,117 @@ body {
   100% {
     transform: translateY(-10vh) translateX(40px) rotate(720deg);
     opacity: 0;
+  }
+}
+
+/* Letter section styles */
+.letter-section {
+  position: fixed;
+  left: 5vw;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35vw;
+  max-width: 400px;
+  min-height: 60vh;
+  background: linear-gradient(145deg, #fff5f9 0%, #ffeef7 50%, #f8e8f5 100%);
+  border-radius: 15px;
+  box-shadow: 
+    0 20px 40px rgba(255, 182, 217, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 40px 35px;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 182, 217, 0.2);
+}
+
+.letter-section::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ff80bf, #ffb3d9, #ff99cc, #ff80bf);
+  border-radius: 17px;
+  z-index: -1;
+  opacity: 0.3;
+  filter: blur(8px);
+}
+
+.letter-content {
+  position: relative;
+  z-index: 2;
+  color: #8b5a6b;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.letter-content h2 {
+  color: #d65a9b;
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: 300;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(255, 182, 217, 0.5);
+}
+
+.letter-content p {
+  margin-bottom: 20px;
+  text-align: justify;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.letter-signature {
+  margin-top: 40px;
+  text-align: right;
+  font-style: italic;
+  color: #b8638f;
+}
+
+/* Decorative corner flourishes */
+.letter-section::after {
+  content: "✿";
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 20px;
+  color: #ff80bf;
+  opacity: 0.6;
+  animation: gentle-pulse 3s ease-in-out infinite;
+}
+
+@keyframes gentle-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.1); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .flowers {
+    transform: scale(0.8) translateX(20vw);
+  }
+  
+  .letter-section {
+    width: 40vw;
+    left: 3vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .flowers {
+    transform: scale(0.7) translateX(0);
+    margin-top: 40vh;
+  }
+  
+  .letter-section {
+    position: relative;
+    width: 90vw;
+    left: 5vw;
+    top: 0;
+    transform: none;
+    margin: 20px auto;
+    max-width: none;
   }
 }
